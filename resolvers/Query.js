@@ -5,13 +5,14 @@ const Query = {
 
         filter.sura = suraId
 
+        //TODO: Pagination to graphql api
         if (verseNo) filter.ayah = verseNo
 
         const ayah = await Surah.find(filter)
 
         const filtered = ayah.slice(pageNo * limit - 1, limit)
 
-        console.log(JSON.stringify(ayah, undefined, 4))
+        return ayah
     },
 }
 

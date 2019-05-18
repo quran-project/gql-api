@@ -10,9 +10,13 @@ dir.forEach(file => {
 
         npmScripts += `npm run import-${name} && `
 
-        console.log(
-            `"import-${name}":"mongorestore -d quran -c ${name} database/${file}",`
-        )
+        const importScript = `"import-${name}":"mongorestore -h ds347665.mlab.com:47665 -d quran -u quran -p quran123 database/${file}",`
+
+        console.log(importScript)
+
+        // console.log(
+        //     `"import-${name}":"mongorestore -d quran -c ${name} database/${file}",`
+        // )
     }
 })
 
