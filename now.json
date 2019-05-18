@@ -1,0 +1,1 @@
+{"version":2,"name":"quran","builds":[{"src":"**/*.js","use":"@now/node"}]}
