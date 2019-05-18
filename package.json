@@ -18,6 +18,7 @@
     "express-session": "^1.16.1",
     "express-validator": "^5.3.1",
     "graphql": "^14.3.0",
+    "graphql-yoga": "^1.17.4",
     "mongoose": "^5.5.7",
     "mongoose-paginate-v2": "^1.2.1",
     "nodemon": "^1.19.0"

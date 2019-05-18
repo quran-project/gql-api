@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const expressSession = require('express-session')
 const cookieParser = require('cookie-parser')
+const graphqlHTTP = require('graphql-yoga')
 
 require('dotenv').config()
 require('./dbconnect')
@@ -14,6 +15,12 @@ app.use(expressSession({
     saveUninitialized: true
 }))
 app.use(cookieParser())
+
+const schema = require('./schema')
+app.use('/gql', graphqlHTTP({
+    schema: schema,
+    graphiql: true
+}))
 
 app.listen(process.env.PORT, () => {
     console.log(`Server is running at http://localhost:${process.env.PORT}`);

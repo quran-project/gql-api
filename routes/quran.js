@@ -3,6 +3,7 @@ const surahController = require('./../controllers/surahController')
 
 Router.get('/', surahController.getAllSurah)
 
-Router.get('/:surah_no', surahController.getSurah)
+Router.get('/:sura', surahController.getSurah)
+Router.get('/:sura/:ayah', surahController.getAyah)
 
 module.exports = Router

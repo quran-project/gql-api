@@ -9,18 +9,17 @@ module.exports.getAllSurah = async (req, res) => {
     //     console.log(data);
     // })
 
-    const surah = require('./../surah.json')
+    const sura = require('./../surah.json')
 
-    res.json(surah)
+    res.json(sura)
 }
 
 module.exports.getSurah = async (req, res) => {
     const options = {
         page: req.query.p || 1,
-        limit: 10,
-        customLabels: 'hlaksdjf'
+        limit: 10
     };
-    let surah = await Surah.paginate({ sura: req.params.surah_no }, options, 5, (error, pageCount, paginatedResults) => {
+    let sura = await Surah.paginate({ sura: req.params.sura }, options, 5, (error, pageCount, paginatedResults) => {
         if (error) {
             console.error(error);
         } else {
@@ -29,12 +28,18 @@ module.exports.getSurah = async (req, res) => {
         }
     })
 
-    if (surah.prevPage) {
-        surah.prevLink = req.protocol + '://' + req.get('host') + req.path + `?p=${surah.prevPage}`
+    if (sura.prevPage) {
+        sura.prevLink = req.protocol + '://' + req.get('host') + req.path + `?p=${sura.prevPage}`
     }
-    if (surah.nextPage) {
-        surah.nextLink = req.protocol + '://' + req.get('host') + req.path + `?p=${surah.nextPage}`
+    if (sura.nextPage) {
+        sura.nextLink = req.protocol + '://' + req.get('host') + req.path + `?p=${sura.nextPage}`
     }
 
-    res.json(surah)
+    res.json(sura)
+}
+
+module.exports.getAyah = async (req, res) => {
+
+    let ayah = await Surah.findOne({ sura: req.params.sura, ayah: req.params.ayah })
+    res.json(ayah)
 }
