@@ -1,1 +1,4 @@
-{"version":2,"name":"quran","builds":[{"src":"**/*.js","use":"@now/node"}]}
+{
+    "version": 1,
+    "name": "quran-graphql-api"
+}

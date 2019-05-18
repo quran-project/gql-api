@@ -1,0 +1,39 @@
+type Query {
+    ayah(suraId: Int!, verseNo: Int, limit: Int, pageNo: Int): [Ayah!]!
+}
+
+type Ayah {
+    ayah: Int
+    text: String!
+    words: [Word!]!
+    translate: String!
+}
+
+type Word {
+    bn: String!
+    en: String!
+    in: String!
+    word: Int!
+    corpus: [Corpus!]!
+}
+
+type Corpus {
+    ar1: String!
+    ar2: String!
+    ar3: String!
+    ar4: String!
+    ar5: String!
+    ayah: String!
+    count: String!
+    lemma: String!
+    pos1: String!
+    pos2: String!
+    pos3: String!
+    pos4: String!
+    pos5: String!
+    root_ar: String!
+    surah: String!
+    verb_type: String!
+    verf_form: String!
+    word: String!
+}

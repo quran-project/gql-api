@@ -8,15 +8,17 @@ require('./dbconnect')
 
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
-app.use(expressSession({
-    secret: process.env.SECRET,
-    resave: true,
-    saveUninitialized: true
-}))
+app.use(
+    expressSession({
+        secret: process.env.SECRET,
+        resave: true,
+        saveUninitialized: true,
+    })
+)
 app.use(cookieParser())
 
 app.listen(process.env.PORT, () => {
-    console.log(`Server is running at http://localhost:${process.env.PORT}`);
+    console.log(`Server is running at http://localhost:${process.env.PORT}`)
 })
 
 app.use(express.static(__dirname + '/public'))
