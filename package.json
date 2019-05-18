@@ -23,18 +23,9 @@
         "seed-data": "npm run import-ayah && npm run import-bookmarks && npm run import-corpus && npm run import-footnotes_mhk && npm run import-notes && npm run import-quran_index && npm run import-surah && npm run import-tafsir_kathir && npm run import-tafsir_kathir_segment && npm run import-tr_en_sahih && npm run import-verb_with_forms && npm run import-words"
     },
     "dependencies": {
-        "bcryptjs": "^2.4.3",
-        "colors": "^1.3.3",
-        "cookie-parser": "^1.4.4",
         "dotenv": "^8.0.0",
-        "express": "^4.16.4",
-        "express-graphql": "^0.8.0",
-        "express-session": "^1.16.1",
-        "express-validator": "^5.3.1",
-        "graphql": "^14.3.0",
         "graphql-yoga": "^1.17.4",
         "mongoose": "^5.5.7",
-        "mongoose-paginate-v2": "^1.2.1",
         "nodemon": "^1.19.0"
     }
 }
